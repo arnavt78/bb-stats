@@ -18,6 +18,10 @@
         <title>BB Stats</title>
     </head>
     <body class="m-2">
+        <div class="float-end">
+            <img src="./img/Basketball.png" alt="Basketball" width="100" height="100" />
+        </div>
+
         <h1 class="display-3">BB Stats</h1>
         <p class="text-secondary fs-4">Track all the statistics of your basketball game!</p>
 
@@ -45,7 +49,7 @@
             </thead>
             <tbody class="assists-players">
                 <tr>
-                    <th scope="row">Abhi</th>
+                    <th scope="row" class="assist-name">Abhi</th>
                     <td>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-sm btn-danger">-</button>
@@ -82,103 +86,7 @@
                             <button type="button" class="btn btn-sm btn-success">+</button>
                         </div>
                     </td>
-                    <td>7</td>
-                    <td>
-                        <button
-                            class="btn btn-sm btn-outline-danger ms-2"
-                            title="Delete the player"
-                        >
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Deon</th>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>0</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>0</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>0</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>0</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>0</td>
-                    <td>
-                        <button
-                            class="btn btn-sm btn-outline-danger ms-2"
-                            title="Delete the player"
-                        >
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Jett</th>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>2</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>3</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>0</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-sm btn-danger">-</button>
-                            <button type="button" class="btn btn-sm btn-light" disabled>
-                                <strong>1</strong>
-                            </button>
-                            <button type="button" class="btn btn-sm btn-success">+</button>
-                        </div>
-                    </td>
-                    <td>6</td>
+                    <td><strong>7</strong></td>
                     <td>
                         <button
                             class="btn btn-sm btn-outline-danger ms-2"
@@ -192,7 +100,11 @@
         </table>
 
         <div class="buttons">
-            <button class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#player-modal">
+            <button
+                class="btn btn-success m-2"
+                data-bs-toggle="modal"
+                data-bs-target="#player-modal"
+            >
                 <i class="bi bi-person-plus"></i>&nbsp; Add new player...
             </button>
             <br />
@@ -208,9 +120,20 @@
             <button class="btn btn-outline-info m-2">
                 <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
             </button>
+
+            <br><br>
+
+            <div class="info ms-2"></div>
         </div>
 
-        <div class="modal fade" id="player-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div
+            class="modal fade"
+            id="player-modal"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -225,12 +148,20 @@
                     <div class="modal-body">
                         <p>Add a new player to the court!</p>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="player-name" name="player-name" placeholder="Name...">
+                            <input
+                                type="text"
+                                class="form-control add-player-name"
+                                id="player-name"
+                                name="player-name"
+                                placeholder="Name..."
+                            />
                             <label for="player-name">Player name...</label>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add Player</button>
+                        <button type="button" class="btn btn-primary add-player-button" data-bs-dismiss="modal">
+                            Add Player
+                        </button>
                     </div>
                 </div>
             </div>
@@ -241,5 +172,26 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"
         ></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script>
+            // Your web app's Firebase configuration.
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional.
+            const firebaseConfig = {
+                apiKey: "AIzaSyB4wo-ZXwWFe9friZ69hwli0fJb6Cr5Hvg",
+                authDomain: "bb-stats-b9bf4.firebaseapp.com",
+                projectId: "bb-stats-b9bf4",
+                storageBucket: "bb-stats-b9bf4.appspot.com",
+                messagingSenderId: "67134145627",
+                appId: "1:67134145627:web:1cff6a665ab1ce419e6b7e",
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+
+        <script src="./js/assists/add.js"></script>
     </body>
 </html>
