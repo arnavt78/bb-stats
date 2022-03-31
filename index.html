@@ -89,7 +89,7 @@
                     <td><strong>7</strong></td>
                     <td>
                         <button
-                            class="btn btn-sm btn-outline-danger ms-2"
+                            class="btn btn-sm btn-outline-danger ms-2 delete Abhi"
                             title="Delete the player"
                         >
                             <i class="bi bi-trash"></i>
@@ -108,7 +108,7 @@
                 <i class="bi bi-person-plus"></i>&nbsp; Add new player...
             </button>
             <br />
-            <button class="btn btn-outline-secondary m-2">
+            <button class="btn btn-outline-secondary m-2 save">
                 <i class="bi bi-save"></i>&nbsp; Save
             </button>
             <button class="btn btn-outline-primary m-2">
@@ -121,7 +121,7 @@
                 <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
             </button>
 
-            <br><br>
+            <br /><br />
 
             <div class="info ms-2"></div>
         </div>
@@ -159,11 +159,32 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary add-player-button" data-bs-dismiss="modal">
+                        <button
+                            type="button"
+                            class="btn btn-primary add-player-button"
+                            data-bs-dismiss="modal"
+                        >
                             Add Player
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="saveSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <!-- <img src="..." class="rounded me-2" alt="..." /> -->
+                    <strong class="me-auto">Saved</strong>
+                    <small>Saved data</small>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">Successfully saved player data locally!</div>
             </div>
         </div>
 
@@ -193,5 +214,6 @@
         </script>
 
         <script src="./js/assists/add.js"></script>
+        <script src="./js/assists/save.js"></script>
     </body>
 </html>

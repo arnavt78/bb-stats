@@ -63,7 +63,7 @@ addPlayerButton.addEventListener("click", () => {
             <td><strong>0</strong></td>
             <td>
                 <button
-                    class="btn btn-sm btn-outline-danger ms-2"
+                    class="btn btn-sm btn-outline-danger ms-2 delete ${name}"
                     title="Delete the player"
                 >
                     <i class="bi bi-trash"></i>
