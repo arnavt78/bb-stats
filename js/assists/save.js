@@ -1,8 +1,12 @@
 const saveButton = document.querySelector(".save");
-const successToast = document.querySelector(".successToast");
+const successToast = document.querySelector("#save-success");
+const teamName = document.querySelector(".team-name");
 
 saveButton.addEventListener("click", () => {
-    localStorage.setItem("saveData", "Hi! I'm temporary!");
+    const data = {};
+
+    sessionStorage.setItem("playerData", JSON.stringify(data));
+    localStorage.setItem("teamName", teamName.value);
 
     const toast = new bootstrap.Toast(successToast);
     toast.show();

@@ -172,10 +172,19 @@
         </div>
 
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div id="saveSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div
+                id="save-success"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="5000"
+            >
                 <div class="toast-header">
-                    <!-- <img src="..." class="rounded me-2" alt="..." /> -->
-                    <strong class="me-auto">Saved</strong>
+                    <strong class="me-auto"
+                        ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp;
+                        Saved</strong
+                    >
                     <small>Saved data</small>
                     <button
                         type="button"
@@ -184,7 +193,39 @@
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="toast-body">Successfully saved player data locally!</div>
+                <div class="toast-body">
+                    Successfully saved player data locally, and title data permentally*!
+
+                    <br /><br />
+
+                    <small>*Until cleared by user</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div
+                id="local-title-info"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="5000"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto"
+                        ><span class="text-primary"><i class="bi bi-info-circle"></i></span>&nbsp;
+                        Retrieved Title</strong
+                    >
+                    <small>Retrieved title from storage</small>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">Successfully retrieved team name from local storage!</div>
             </div>
         </div>
 
@@ -213,6 +254,7 @@
             const db = firebase.firestore();
         </script>
 
+        <script src="./js/assists/startup.js"></script>
         <script src="./js/assists/add.js"></script>
         <script src="./js/assists/save.js"></script>
     </body>
