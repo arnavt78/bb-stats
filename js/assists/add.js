@@ -1,19 +1,13 @@
-const table = document.querySelector(".assists-players");
-const names = document.querySelectorAll(".assist-name");
-const info = document.querySelector(".info");
-const addPlayerButton = document.querySelector(".add-player-button");
-const addPlayerName = document.querySelector(".add-player-name");
-
-addPlayerButton.addEventListener("click", () => {
+ADD_PLAYER_BUTTON.addEventListener("click", () => {
     let error = false;
 
-    const name = addPlayerName.value;
-    addPlayerName.value = "";
+    const name = ADD_PLAYER_NAME.value;
+    ADD_PLAYER_NAME.value = "";
 
-    Array.from(names).forEach((ele) => {
+    Array.from(NAMES).forEach((ele) => {
         if (ele.innerHTML.toLowerCase() === name.toLowerCase()) {
-            info.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
-            addPlayerName.value = name;
+            INFO.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
+            ADD_PLAYER_NAME.value = name;
 
             error = true;
         }
@@ -71,7 +65,7 @@ addPlayerButton.addEventListener("click", () => {
             </td>
         </tr>
     `;
-    table.innerHTML += tableCode;
+    TABLE.innerHTML += tableCode;
 
-    info.innerHTML = "";
+    INFO.innerHTML = "";
 });
