@@ -64,7 +64,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
                     class="btn btn-sm btn-outline-danger ms-2 delete"
                     title="Delete the player"
                 >
-                    <i class="bi bi-trash"></i>
+                    <i class="bi bi-trash delete"></i>
                 </button>
             </td>
         </tr>
