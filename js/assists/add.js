@@ -69,9 +69,17 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             </td>
         </tr>
     `;
+    
     TABLE.innerHTML += tableCode;
-
     INFO.innerHTML = "";
 
-    listenToPlayer(name.toLowerCase());
+    const listenToAllPlayers = () => {
+        const allPlayers = document.querySelectorAll(".assist-name");
+
+        Array.from(allPlayers).forEach((ele) => {
+            listenToPlayer(ele.innerHTML.toLowerCase());
+        });
+    };
+
+    listenToAllPlayers();
 });
