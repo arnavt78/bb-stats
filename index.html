@@ -20,7 +20,13 @@
     </head>
     <body class="m-2">
         <div class="float-end">
-            <img src="./img/Basketball-GIF.gif" alt="Basketball" width="150" height="150" draggable="false" />
+            <img
+                src="./img/Basketball-GIF.gif"
+                alt="Basketball"
+                width="150"
+                height="150"
+                draggable="false"
+            />
         </div>
 
         <h1 class="display-3">BB Stats</h1>
@@ -41,9 +47,7 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col"><u>A</u>ssists</th>
-                    <th scope="col">
-                        <u>P</u>otential <small>Assists</small>
-                    </th>
+                    <th scope="col"><u>P</u>otential <small>Assists</small></th>
                     <th scope="col"><u>S</u>creen</th>
                     <th scope="col"><u>R</u>ebounds</th>
                     <th scope="col">S<u>t</u>eals</th>
@@ -72,19 +76,53 @@
             >
                 <i class="bi bi-person-plus"></i>&nbsp; Add new player...
             </button>
+
             <br />
-            <button class="btn btn-outline-secondary m-2 save">
-                <i class="bi bi-save"></i>&nbsp; Save
-            </button>
-            <button class="btn btn-outline-primary m-2">
-                <i class="bi bi-cloud-upload"></i>&nbsp; Save as...
-            </button>
-            <button class="btn btn-outline-danger m-2">
-                <i class="bi bi-people"></i>&nbsp; Import team...
-            </button>
-            <button class="btn btn-outline-info m-2">
-                <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
-            </button>
+
+            <div class="container-fluid">
+                <div class="row row-cols-auto">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary my-2 save">
+                            <i class="bi bi-save"></i>&nbsp; Save
+                        </button>
+                    </div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <button
+                                class="btn btn-outline-primary dropdown-toggle my-2"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <i class="bi bi-cloud-upload"></i>&nbsp; Save as...
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <button class="dropdown-item">
+                                        <i class="bi bi-people"></i>&nbsp; Save team
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item">
+                                        <i class="bi bi-123"></i>&nbsp; Save scores
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-danger my-2">
+                            <i class="bi bi-people"></i>&nbsp; Import team...
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-info my-2">
+                            <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <br /><br />
 
