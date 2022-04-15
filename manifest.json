@@ -3,13 +3,13 @@
     "short_name": "BB Stats",
     "description": "Track all the statistics of your basketball game!",
     "author": "Arnav Thorat",
-    "start_url": "/",
+    "start_url": "index.html",
     "shortcuts": [
         {
             "name": "Home/Main",
             "short_name": "Home",
             "description": "The main/home page for tracking statistics!",
-            "url": "/",
+            "url": "index.html",
             "icons": [
                 {
                     "src": "img/icons/manifest-icon-192.maskable.png",
