@@ -51,11 +51,29 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             </td>
             <td>
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-sm btn-danger great-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-great" disabled>
+                    <button type="button" class="btn btn-sm btn-danger rebounds-minus">-</button>
+                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-rebounds" disabled>
                         <strong>0</strong>
                     </button>
-                    <button type="button" class="btn btn-sm btn-success great-plus">+</button>
+                    <button type="button" class="btn btn-sm btn-success rebounds-plus">+</button>
+                </div>
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-danger steals-minus">-</button>
+                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-steals" disabled>
+                        <strong>0</strong>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success steals-plus">+</button>
+                </div>
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-danger blocks-minus">-</button>
+                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-blocks" disabled>
+                        <strong>0</strong>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success blocks-plus">+</button>
                 </div>
             </td>
             <td><strong class="${name.toLowerCase()}-total">0</strong></td>

@@ -41,16 +41,20 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col"><u>A</u>ssists</th>
-                    <th scope="col"><u>P</u>otential</th>
+                    <th scope="col">
+                        <u>P</u>otential <small>Assists</small>
+                    </th>
                     <th scope="col"><u>S</u>creen</th>
-                    <th scope="col"><u>G</u>reat</th>
+                    <th scope="col"><u>R</u>ebounds</th>
+                    <th scope="col">S<u>t</u>eals</th>
+                    <th scope="col"><u>B</u>locks</th>
                     <th scope="col">Total</th>
                     <th scope="col"><i>Actions</i></th>
                 </tr>
             </thead>
             <tbody class="assists-players">
                 <tr class="intro">
-                    <td colspan="7">
+                    <td colspan="9">
                         <p class="text-center m-3">
                             Click the <i>Add New Player</i> button to get started, or, if your team
                             already exists, click <i>Import Team</i>!
@@ -155,11 +159,12 @@
                     ></button>
                 </div>
                 <div class="toast-body">
-                    Successfully saved player data locally, and title data permentally*!
+                    Successfully saved the following:
 
-                    <br /><br />
-
-                    <small>*Until cleared by user</small>
+                    <ul>
+                        <li>Team name (permanently until changed)</li>
+                        <li>Team data (temporarily until page closed)</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -176,9 +181,9 @@
                 <div class="toast-header">
                     <strong class="me-auto"
                         ><span class="text-primary"><i class="bi bi-info-circle"></i></span>&nbsp;
-                        Retrieved Title</strong
+                        Retrieved</strong
                     >
-                    <small>Retrieved title from storage</small>
+                    <small>Retrieved data from storage</small>
                     <button
                         type="button"
                         class="btn-close"
@@ -186,7 +191,14 @@
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="toast-body">Successfully retrieved team name from local storage!</div>
+                <div class="toast-body">
+                    Successfully retrieved the following:
+
+                    <ul>
+                        <li>Team name</li>
+                        <li>Team data</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -227,8 +239,8 @@
 
         <script src="./js/constants/assists.js"></script>
 
-        <script src="./js/assists/startup.js"></script>
         <script src="./js/assists/listen.js"></script>
+        <script src="./js/assists/startup.js"></script>
         <script src="./js/assists/add.js"></script>
         <script src="./js/assists/save.js"></script>
     </body>

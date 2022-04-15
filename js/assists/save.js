@@ -1,7 +1,10 @@
 SAVE_BUTTON.addEventListener("click", () => {
-    const data = {};
+    if (!TABLE.children[0].className.includes("intro")) {
+        sessionStorage.setItem("playerData", TABLE.innerHTML);
+    } else {
+        sessionStorage.removeItem("playerData");
+    }
 
-    sessionStorage.setItem("playerData", JSON.stringify(data));
     localStorage.setItem("teamName", TEAM_NAME.value);
 
     const toast = new bootstrap.Toast(SUCCESS_TOAST);
