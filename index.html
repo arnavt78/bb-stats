@@ -100,7 +100,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li>
-                                    <button class="dropdown-item">
+                                    <button class="dropdown-item save-team">
                                         <i class="bi bi-people"></i>&nbsp; Save team
                                     </button>
                                 </li>
@@ -131,7 +131,7 @@
                                 </li>
                                 <li>
                                     <button class="dropdown-item">
-                                        <i class="bi bi-123"></i>&nbsp; Import players and scores
+                                        <i class="bi bi-123"></i>&nbsp; Import scores
                                     </button>
                                 </li>
                             </ul>
@@ -182,9 +182,7 @@
                                     id="saints"
                                     checked
                                 />
-                                <label class="form-check-label" for="saints">
-                                    Saints
-                                </label>
+                                <label class="form-check-label" for="saints"> Saints </label>
                             </div>
                             <div class="form-check">
                                 <input
@@ -193,9 +191,7 @@
                                     name="team"
                                     id="magic"
                                 />
-                                <label class="form-check-label" for="magic">
-                                    Magic
-                                </label>
+                                <label class="form-check-label" for="magic"> Magic </label>
                             </div>
                             <div class="form-check">
                                 <input
@@ -204,9 +200,7 @@
                                     name="team"
                                     id="panthers"
                                 />
-                                <label class="form-check-label" for="panthers">
-                                    Panthers
-                                </label>
+                                <label class="form-check-label" for="panthers"> Panthers </label>
                             </div>
                             <div class="form-check">
                                 <input
@@ -215,9 +209,7 @@
                                     name="team"
                                     id="lightning"
                                 />
-                                <label class="form-check-label" for="lightning">
-                                    Lightning
-                                </label>
+                                <label class="form-check-label" for="lightning"> Lightning </label>
                             </div>
                         </div>
 
@@ -350,6 +342,82 @@
             </div>
         </div>
 
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div
+                id="save-as-team"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="5000"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto"
+                        ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp;
+                        Saved As</strong
+                    >
+                    <small>Successfully saved team</small>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">Successfully saved the players in the backend!</div>
+            </div>
+        </div>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div
+                id="save-as-team-error"
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-bs-delay="30000"
+            >
+                <div class="toast-header">
+                    <strong class="me-auto"
+                        ><span class="text-danger"><i class="bi bi-exclamation-triangle"></i></span
+                        >&nbsp; Error Saving As</strong
+                    >
+                    <small>Error saving team</small>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="toast-body">
+                    There was an issue saving the team. Please try again, or try to troubleshoot the
+                    issue by doing the below.
+
+                    <ul>
+                        <li>
+                            Make sure that you are connected to the Internet.
+                            <i class="bi bi-wifi"></i>
+                        </li>
+                        <li>
+                            Check to see if you haven't blocked third-party apps.
+                            <i class="bi bi-window-stack"></i>
+                        </li>
+                    </ul>
+
+                    For help, email the address at the bottom of the website.
+
+                    <hr />
+
+                    <small class="text-secondary">
+                        <strong>Developers:</strong> Open the <i>Console</i> by pressing
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>, and inspect any errors
+                        there.
+                    </small>
+                </div>
+            </div>
+        </div>
+
         <hr />
 
         <small
@@ -366,24 +434,35 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
         <script>
             // Your web app's Firebase configuration.
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional.
             const firebaseConfig = {
-                apiKey: "AIzaSyB4wo-ZXwWFe9friZ69hwli0fJb6Cr5Hvg",
-                authDomain: "bb-stats-b9bf4.firebaseapp.com",
-                projectId: "bb-stats-b9bf4",
-                storageBucket: "bb-stats-b9bf4.appspot.com",
-                messagingSenderId: "67134145627",
-                appId: "1:67134145627:web:1cff6a665ab1ce419e6b7e",
+                apiKey: "AIzaSyCbmCUhK5AxYtytaP1ChYNrTc_FmThUAtU",
+                authDomain: "bb-stats-fa260.firebaseapp.com",
+                projectId: "bb-stats-fa260",
+                storageBucket: "bb-stats-fa260.appspot.com",
+                messagingSenderId: "120405779630",
+                appId: "1:120405779630:web:02d6a60e1785a4ec6d793f",
             };
 
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
             const db = firebase.firestore();
-        </script> -->
+
+            // db.collection("assists")
+            //     .get()
+            //     .then((snapshot) => {
+            //         snapshot.docs.forEach((doc) => {
+            //             console.log(doc.data(), doc.id);
+            //         });
+            //     })
+            //     .catch((err) => {
+            //         console.log(err);
+            //     });
+        </script>
 
         <script>
             if ("serviceWorker" in navigator) {
@@ -395,10 +474,11 @@
 
         <script src="./js/global/team.js"></script>
 
-        <script src="./js/assists/listen.js"></script>
+        <script defer src="./js/assists/listen.js"></script>
         <script src="./js/assists/startup.js"></script>
-        <script src="./js/assists/add.js"></script>
-        <script src="./js/assists/save.js"></script>
-        <script src="./js/assists/saveCSV.js"></script>
+        <script defer src="./js/assists/add.js"></script>
+        <script defer src="./js/assists/save.js"></script>
+        <script defer src="./js/assists/save-as-team.js"></script>
+        <script defer src="./js/assists/save-CSV.js"></script>
     </body>
 </html>
