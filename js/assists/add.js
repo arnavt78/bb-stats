@@ -1,25 +1,25 @@
 ADD_PLAYER_BUTTON.addEventListener("click", () => {
-    let error = false;
+  let error = false;
 
-    const name = ADD_PLAYER_NAME.value.trim();
-    ADD_PLAYER_NAME.value = "";
+  const name = ADD_PLAYER_NAME.value.trim();
+  ADD_PLAYER_NAME.value = "";
 
-    if (document.querySelector(".intro")) {
-        document.querySelector(".intro").remove();
+  if (document.querySelector(".intro")) {
+    document.querySelector(".intro").remove();
+  }
+
+  Array.from(NAMES).forEach((ele) => {
+    if (ele.innerHTML.toLowerCase() === name.toLowerCase()) {
+      INFO.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
+      ADD_PLAYER_NAME.value = name;
+
+      error = true;
     }
+  });
 
-    Array.from(NAMES).forEach((ele) => {
-        if (ele.innerHTML.toLowerCase() === name.toLowerCase()) {
-            INFO.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
-            ADD_PLAYER_NAME.value = name;
+  if (error) return;
 
-            error = true;
-        }
-    });
-
-    if (error) return;
-
-    const tableCode = `
+  const tableCode = `
         <tr class="${name.toLowerCase()}">
             <th scope="row" class="assist-name">${name}</th>
             <td>
@@ -87,17 +87,17 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             </td>
         </tr>
     `;
-    
-    TABLE.innerHTML += tableCode;
-    INFO.innerHTML = "";
 
-    const listenToAllPlayers = () => {
-        const allPlayers = document.querySelectorAll(".assist-name");
+  TABLE.innerHTML += tableCode;
+  INFO.innerHTML = "";
 
-        Array.from(allPlayers).forEach((ele) => {
-            listenToPlayer(ele.innerHTML.toLowerCase());
-        });
-    };
+  const listenToAllPlayers = () => {
+    const allPlayers = document.querySelectorAll(".assist-name");
 
-    listenToAllPlayers();
+    Array.from(allPlayers).forEach((ele) => {
+      listenToPlayer(ele.innerHTML.toLowerCase());
+    });
+  };
+
+  listenToAllPlayers();
 });

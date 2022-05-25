@@ -1,528 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Track all the statistics of your basketball game!" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-        />
-        <link rel="icon" href="./img/Basketball-Icon.png" />
-        <link rel="manifest" href="manifest.json" />
-        <title>BB Stats</title>
-    </head>
-    <body class="m-2">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img
-                        src="./img/Basketball-Icon.png"
-                        alt="Icon"
-                        width="30"
-                        height="30"
-                        draggable="false"
-                        class="d-inline-block align-text-top"
-                    />
-                    BB Stats
-                </a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html"
-                                >Home</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="#"
-                                onclick="about=window.open('about.html', 'about', 'width=550,height=550');"
-                                >About...</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="float-end">
-            <img
-                class="team-img"
-                src="./img/Basketball-GIF.gif"
-                alt="Basketball"
-                width="150"
-                draggable="false"
-            />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Track all the statistics of your basketball game!" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="icon" href="./img/Basketball-Icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>BB Stats</title>
+  </head>
+  <body class="m-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./img/Basketball-Icon.png"
+            alt="Icon"
+            width="30"
+            height="30"
+            draggable="false"
+            class="d-inline-block align-text-top"
+          />
+          BB Stats
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                onclick="about=window.open('about.html', 'about', 'width=550,height=550');"
+                >About...</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <h1 class="display-3">BB Stats</h1>
-        <p class="text-secondary fs-4">Track all the statistics of your basketball game!</p>
+    <div class="float-end">
+      <img
+        class="team-img"
+        src="./img/Basketball-GIF.gif"
+        alt="Basketball"
+        width="150"
+        draggable="false"
+      />
+    </div>
 
-        <h2 class="mt-3">Assists</h2>
-        <input
-            type="text"
-            class="form-control team-name"
-            name="team-name"
-            id="team-name"
-            placeholder="Team name (Saints 14.1 Boys)..."
-            required
-        />
+    <h1 class="display-3">BB Stats</h1>
+    <p class="text-secondary fs-4">Track all the statistics of your basketball game!</p>
 
-        <table class="table table-striped table-bordered border-secondary mt-3 whole-table">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col"><u>A</u>ssists</th>
-                    <th scope="col"><u>P</u>otential <small>Assists</small></th>
-                    <th scope="col"><u>S</u>creen</th>
-                    <th scope="col"><u>R</u>ebounds</th>
-                    <th scope="col">S<u>t</u>eals</th>
-                    <th scope="col"><u>B</u>locks</th>
-                    <th scope="col">Total <small>Assists</small></th>
-                    <th scope="col"><i>Actions</i></th>
-                </tr>
-            </thead>
-            <tbody class="assists-players">
-                <tr class="intro">
-                    <td colspan="9">
-                        <p class="text-center m-3">
-                            Click the <i>Add New Player</i> button to get started, or, if your team
-                            already exists, click <i>Import Team</i>!
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <h2 class="mt-3">Assists</h2>
+    <input
+      type="text"
+      class="form-control team-name"
+      name="team-name"
+      id="team-name"
+      placeholder="Team name (Saints 14.1 Boys)..."
+      required
+    />
 
-        <div class="buttons">
-            <button
-                class="btn btn-success m-2"
-                data-bs-toggle="modal"
-                data-bs-target="#player-modal"
-            >
-                <i class="bi bi-person-plus"></i>&nbsp; Add new player...
+    <table class="table table-striped table-bordered border-secondary mt-3 whole-table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col"><u>A</u>ssists</th>
+          <th scope="col"><u>P</u>otential <small>Assists</small></th>
+          <th scope="col"><u>S</u>creen</th>
+          <th scope="col"><u>R</u>ebounds</th>
+          <th scope="col">S<u>t</u>eals</th>
+          <th scope="col"><u>B</u>locks</th>
+          <th scope="col">Total <small>Assists</small></th>
+          <th scope="col"><i>Actions</i></th>
+        </tr>
+      </thead>
+      <tbody class="assists-players">
+        <tr class="intro">
+          <td colspan="9">
+            <p class="text-center m-3">
+              Click the <i>Add New Player</i> button to get started, or, if your team already
+              exists, click <i>Import Team</i>!
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="buttons">
+      <button class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#player-modal">
+        <i class="bi bi-person-plus"></i>&nbsp; Add new player...
+      </button>
+
+      <br />
+
+      <div class="container-fluid">
+        <div class="row row-cols-auto">
+          <div class="col">
+            <button class="btn btn-outline-secondary my-2 save">
+              <i class="bi bi-save"></i>&nbsp; Save
             </button>
+          </div>
+          <div class="col">
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-primary dropdown-toggle my-2"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-cloud-upload"></i>&nbsp; Save as...
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <button class="dropdown-item save-team">
+                    <i class="bi bi-people"></i>&nbsp; Save team
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item"><i class="bi bi-123"></i>&nbsp; Save scores</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-danger dropdown-toggle my-2"
+                type="button"
+                id="dropdownMenuButton2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-people"></i>&nbsp; Import team...
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <button class="dropdown-item">
+                    <i class="bi bi-people"></i>&nbsp; Import players
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item">
+                    <i class="bi bi-123"></i>&nbsp; Import scores
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-info my-2 export-csv">
+              <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
+            </button>
+          </div>
+        </div>
+      </div>
 
-            <br />
+      <br /><br />
 
-            <div class="container-fluid">
-                <div class="row row-cols-auto">
-                    <div class="col">
-                        <button class="btn btn-outline-secondary my-2 save">
-                            <i class="bi bi-save"></i>&nbsp; Save
-                        </button>
-                    </div>
-                    <div class="col">
-                        <div class="dropdown">
-                            <button
-                                class="btn btn-outline-primary dropdown-toggle my-2"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <i class="bi bi-cloud-upload"></i>&nbsp; Save as...
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <button class="dropdown-item save-team">
-                                        <i class="bi bi-people"></i>&nbsp; Save team
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item">
-                                        <i class="bi bi-123"></i>&nbsp; Save scores
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="dropdown">
-                            <button
-                                class="btn btn-outline-danger dropdown-toggle my-2"
-                                type="button"
-                                id="dropdownMenuButton2"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <i class="bi bi-people"></i>&nbsp; Import team...
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <button class="dropdown-item">
-                                        <i class="bi bi-people"></i>&nbsp; Import players
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item">
-                                        <i class="bi bi-123"></i>&nbsp; Import scores
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-info my-2 export-csv">
-                            <i class="bi bi-filetype-csv"></i>&nbsp; Export to CSV...
-                        </button>
-                    </div>
-                </div>
+      <div class="info ms-2"></div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="team-modal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Choose Team</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              disabled
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Please select your team:</p>
+
+            <div class="form-floating mb-3 team-form">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="team" id="saints" checked />
+                <label class="form-check-label" for="saints"> Saints </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="team" id="magic" />
+                <label class="form-check-label" for="magic"> Magic </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="team" id="panthers" />
+                <label class="form-check-label" for="panthers"> Panthers </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="team" id="lightning" />
+                <label class="form-check-label" for="lightning"> Lightning </label>
+              </div>
             </div>
 
-            <br /><br />
-
-            <div class="info ms-2"></div>
-        </div>
-
-        <div
-            class="modal fade"
-            id="team-modal"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Choose Team</h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                            disabled
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Please select your team:</p>
-
-                        <div class="form-floating mb-3 team-form">
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="team"
-                                    id="saints"
-                                    checked
-                                />
-                                <label class="form-check-label" for="saints"> Saints </label>
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="team"
-                                    id="magic"
-                                />
-                                <label class="form-check-label" for="magic"> Magic </label>
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="team"
-                                    id="panthers"
-                                />
-                                <label class="form-check-label" for="panthers"> Panthers </label>
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="team"
-                                    id="lightning"
-                                />
-                                <label class="form-check-label" for="lightning"> Lightning </label>
-                            </div>
-                        </div>
-
-                        <small class="text-secondary"
-                            >Please contact the email (shown below) about any outdated
-                            information.</small
-                        >
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-primary set-team-button"
-                            data-bs-dismiss="modal"
-                        >
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="modal fade"
-            id="player-modal"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabelTwo"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add New Player</h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Add a new player to the court!</p>
-                        <div class="form-floating mb-3">
-                            <input
-                                type="text"
-                                class="form-control add-player-name"
-                                id="player-name"
-                                name="player-name"
-                                placeholder="Name..."
-                            />
-                            <label for="player-name">Player name...</label>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-primary add-player-button"
-                            data-bs-dismiss="modal"
-                        >
-                            Add Player
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div
-                id="save-success"
-                class="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-                data-bs-delay="5000"
+            <small class="text-secondary"
+              >Please contact the email (shown below) about any outdated information.</small
             >
-                <div class="toast-header">
-                    <strong class="me-auto"
-                        ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp;
-                        Saved</strong
-                    >
-                    <small>Saved data</small>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="toast"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="toast-body">
-                    Successfully saved the following:
-
-                    <ul>
-                        <li>Team name (permanently until changed)</li>
-                        <li>Team data (temporarily until page closed)</li>
-                    </ul>
-                </div>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary set-team-button" data-bs-dismiss="modal">
+              Submit
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div
-                id="local-title-info"
-                class="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-                data-bs-delay="5000"
-            >
-                <div class="toast-header">
-                    <strong class="me-auto"
-                        ><span class="text-primary"><i class="bi bi-info-circle"></i></span>&nbsp;
-                        Retrieved</strong
-                    >
-                    <small>Retrieved data from storage</small>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="toast"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="toast-body">
-                    Successfully retrieved the following:
-
-                    <ul>
-                        <li>Team name</li>
-                        <li>Team data</li>
-                    </ul>
-                </div>
+    <div
+      class="modal fade"
+      id="player-modal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabelTwo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add New Player</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Add a new player to the court!</p>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control add-player-name"
+                id="player-name"
+                name="player-name"
+                placeholder="Name..."
+              />
+              <label for="player-name">Player name...</label>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary add-player-button" data-bs-dismiss="modal">
+              Add Player
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div
-                id="save-as-team"
-                class="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-                data-bs-delay="5000"
-            >
-                <div class="toast-header">
-                    <strong class="me-auto"
-                        ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp;
-                        Saved As</strong
-                    >
-                    <small>Successfully saved team</small>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="toast"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="toast-body">Successfully saved the players in the backend!</div>
-            </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="save-success"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="5000"
+      >
+        <div class="toast-header">
+          <strong class="me-auto"
+            ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp;
+            Saved</strong
+          >
+          <small>Saved data</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
         </div>
+        <div class="toast-body">
+          Successfully saved the following:
 
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-            <div
-                id="save-as-team-error"
-                class="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-                data-bs-delay="30000"
-            >
-                <div class="toast-header">
-                    <strong class="me-auto"
-                        ><span class="text-danger"><i class="bi bi-exclamation-triangle"></i></span
-                        >&nbsp; Error Saving As</strong
-                    >
-                    <small>Error saving team</small>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="toast"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="toast-body">
-                    There was an issue saving the team. Please try again, or try to troubleshoot the
-                    issue by doing the below.
-
-                    <ul>
-                        <li>
-                            Make sure that you are connected to the Internet.
-                            <i class="bi bi-wifi"></i>
-                        </li>
-                        <li>
-                            Check to see if you haven't blocked third-party apps.
-                            <i class="bi bi-window-stack"></i>
-                        </li>
-                    </ul>
-
-                    For help, email the address at the bottom of the website.
-
-                    <hr />
-
-                    <small class="text-secondary">
-                        <strong>Developers:</strong> Open the <i>Console</i> by pressing
-                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>, and inspect any errors
-                        there.
-                    </small>
-                </div>
-            </div>
+          <ul>
+            <li>Team name (permanently until changed)</li>
+            <li>Team data (temporarily until page closed)</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <hr />
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="local-title-info"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="5000"
+      >
+        <div class="toast-header">
+          <strong class="me-auto"
+            ><span class="text-primary"><i class="bi bi-info-circle"></i></span>&nbsp;
+            Retrieved</strong
+          >
+          <small>Retrieved data from storage</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          Successfully retrieved the following:
 
-        <small
-            class="text-secondary"
-            role="button"
-            onclick="popup=window.open('https:\/\/mailhide.io/e/2WXRJen9', 'mailhidepopup', 'width=580,height=635');"
-        >
-            Contact me at a......@gmail.com (click to reveal full address).
-        </small>
+          <ul>
+            <li>Team name</li>
+            <li>Team data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"
-        ></script>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="save-as-team"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="5000"
+      >
+        <div class="toast-header">
+          <strong class="me-auto"
+            ><span class="text-success"><i class="bi bi-check-circle"></i></span>&nbsp; Saved
+            As</strong
+          >
+          <small>Successfully saved team</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Successfully saved the players in the backend!</div>
+      </div>
+    </div>
 
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script>
-            // Your web app's Firebase configuration.
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional.
-            const firebaseConfig = {
-                apiKey: "AIzaSyCbmCUhK5AxYtytaP1ChYNrTc_FmThUAtU",
-                authDomain: "bb-stats-fa260.firebaseapp.com",
-                projectId: "bb-stats-fa260",
-                storageBucket: "bb-stats-fa260.appspot.com",
-                messagingSenderId: "120405779630",
-                appId: "1:120405779630:web:02d6a60e1785a4ec6d793f",
-            };
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="save-as-team-error"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="30000"
+      >
+        <div class="toast-header">
+          <strong class="me-auto"
+            ><span class="text-danger"><i class="bi bi-exclamation-triangle"></i></span>&nbsp; Error
+            Saving As</strong
+          >
+          <small>Error saving team</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          There was an issue saving the team. Please try again, or try to troubleshoot the issue by
+          doing the below.
 
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore();
+          <ul>
+            <li>
+              Make sure that you are connected to the Internet.
+              <i class="bi bi-wifi"></i>
+            </li>
+            <li>
+              Check to see if you haven't blocked third-party apps.
+              <i class="bi bi-window-stack"></i>
+            </li>
+          </ul>
 
-            // db.collection("assists")
-            //     .get()
-            //     .then((snapshot) => {
-            //         snapshot.docs.forEach((doc) => {
-            //             console.log(doc.data(), doc.id);
-            //         });
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     });
-        </script>
+          For help, email the address at the bottom of the website.
 
-        <script>
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("./service-worker.js");
-            }
-        </script>
+          <hr />
 
-        <script src="./js/constants/assists.js"></script>
+          <small class="text-secondary">
+            <strong>Developers:</strong> Open the <i>Console</i> by pressing <kbd>Ctrl</kbd> +
+            <kbd>Shift</kbd> + <kbd>I</kbd>, and inspect any errors there.
+          </small>
+        </div>
+      </div>
+    </div>
 
-        <script src="./js/global/team.js"></script>
+    <hr />
 
-        <script defer src="./js/assists/listen.js"></script>
-        <script src="./js/assists/startup.js"></script>
-        <script defer src="./js/assists/add.js"></script>
-        <script defer src="./js/assists/save.js"></script>
-        <script defer src="./js/assists/save-as-team.js"></script>
-        <script defer src="./js/assists/save-CSV.js"></script>
-    </body>
+    <small
+      class="text-secondary"
+      role="button"
+      onclick="popup=window.open('https:\/\/mailhide.io/e/2WXRJen9', 'mailhidepopup', 'width=580,height=635');"
+    >
+      Contact me at a......@gmail.com (click to reveal full address).
+    </small>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration.
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional.
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbmCUhK5AxYtytaP1ChYNrTc_FmThUAtU",
+        authDomain: "bb-stats-fa260.firebaseapp.com",
+        projectId: "bb-stats-fa260",
+        storageBucket: "bb-stats-fa260.appspot.com",
+        messagingSenderId: "120405779630",
+        appId: "1:120405779630:web:02d6a60e1785a4ec6d793f",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      // db.collection("assists")
+      //     .get()
+      //     .then((snapshot) => {
+      //         snapshot.docs.forEach((doc) => {
+      //             console.log(doc.data(), doc.id);
+      //         });
+      //     })
+      //     .catch((err) => {
+      //         console.log(err);
+      //     });
+    </script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js");
+      }
+    </script>
+
+    <script src="./js/constants/assists.js"></script>
+
+    <script src="./js/global/team.js"></script>
+
+    <script defer src="./js/assists/listen.js"></script>
+    <script src="./js/assists/startup.js"></script>
+    <script defer src="./js/assists/add.js"></script>
+    <script defer src="./js/assists/save.js"></script>
+    <script defer src="./js/assists/save-as-team.js"></script>
+    <script defer src="./js/assists/save-CSV.js"></script>
+  </body>
 </html>
