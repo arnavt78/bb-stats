@@ -19,13 +19,15 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
 
   if (error) return;
 
+  const cleanName = name.toLowerCase().replace(/\s/g, "-");
+
   const tableCode = `
-        <tr class="${name.toLowerCase()}">
+        <tr class="${cleanName}">
             <th scope="row" class="assist-name">${name}</th>
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger assists-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-assists" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-assists" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success assists-plus">+</button>
@@ -34,7 +36,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger potential-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-potential" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-potential" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success potential-plus">+</button>
@@ -43,7 +45,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger screen-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-screen" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-screen" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success screen-plus">+</button>
@@ -52,7 +54,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger rebounds-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-rebounds" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-rebounds" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success rebounds-plus">+</button>
@@ -61,7 +63,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger steals-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-steals" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-steals" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success steals-plus">+</button>
@@ -70,13 +72,13 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-danger blocks-minus">-</button>
-                    <button type="button" class="btn btn-sm btn-light ${name.toLowerCase()}-blocks" disabled>
+                    <button type="button" class="btn btn-sm btn-light ${cleanName}-blocks" disabled>
                         <strong>0</strong>
                     </button>
                     <button type="button" class="btn btn-sm btn-success blocks-plus">+</button>
                 </div>
             </td>
-            <td><strong class="${name.toLowerCase()}-total">0</strong></td>
+            <td><strong class="${cleanName}-total">0</strong></td>
             <td>
                 <button
                     class="btn btn-sm btn-outline-danger ms-2 delete"
@@ -95,7 +97,7 @@ ADD_PLAYER_BUTTON.addEventListener("click", () => {
     const allPlayers = document.querySelectorAll(".assist-name");
 
     Array.from(allPlayers).forEach((ele) => {
-      listenToPlayer(ele.innerHTML.toLowerCase());
+      listenToPlayer(ele.innerHTML.toLowerCase().replace(/\s/g, "-"));
     });
   };
 
