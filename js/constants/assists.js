@@ -4,8 +4,7 @@ const LOCAL_TITLE = document.querySelector("#local-title-info");
 // add.js
 const NAMES = document.querySelectorAll(".assist-name");
 const INFO = document.querySelector(".info");
-const ADD_PLAYER_BUTTON = document.querySelector(".add-player-button");
-const ADD_PLAYER_NAME = document.querySelector(".add-player-name");
+const ADD_PLAYER = document.querySelector(".add-new-player");
 
 // save.js
 const SAVE_BUTTON = document.querySelector(".save");
