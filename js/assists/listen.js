@@ -30,9 +30,8 @@ const listenToPlayer = (name) => {
                     <tr class="intro">
                         <td colspan="9">
                             <p class="text-center m-3">
-                                It looks like you've removed all of your players! Click the <i>Add
-                                New Player</i> button to get started, or, if your team already exists,
-                                click <i>Import Team</i>.
+                                It looks like you've removed all of your players! To add a new player, enter your player's name under
+                                <i>Basic Information</i> above.
                             </p>
                         </td>
                     </tr>

@@ -1,8 +1,12 @@
-ADD_PLAYER_BUTTON.addEventListener("click", () => {
+ADD_PLAYER.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const ADD_PLAYER_NAME = ADD_PLAYER.playerName;
+
   let error = false;
 
   const name = ADD_PLAYER_NAME.value.trim();
-  ADD_PLAYER_NAME.value = "";
+  document.querySelector("#playerName").value = "";
 
   if (document.querySelector(".intro")) {
     document.querySelector(".intro").remove();
