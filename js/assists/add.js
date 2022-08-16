@@ -12,20 +12,28 @@ ADD_PLAYER.addEventListener("submit", (e) => {
     document.querySelector(".intro").remove();
   }
 
-  Array.from(NAMES).forEach((ele) => {
-    if (ele.innerHTML.toLowerCase() === name.toLowerCase()) {
-      INFO.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
-      ADD_PLAYER_NAME.value = name;
+  // Array.from(NAMES).forEach((ele) => {
+  //   if (ele.innerHTML.toLowerCase() === name.toLowerCase()) {
+  //     INFO.innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-exclamation-circle"></i>&nbsp; The choosen name already exists. Please choose another name.</span>`;
+  //     ADD_PLAYER_NAME.value = name;
 
-      error = true;
-    }
-  });
+  //     error = true;
+  //   }
+  // });
 
-  if (error) return;
+  if (name.length === 0) {
+    document.querySelector(
+      '[id="error"]'
+    ).innerHTML = `<span class="text-danger fw-bold"><i class="bi bi-x-circle-fill"></i>&nbsp; Names cannot be empty. Please enter a name.</span>`;
 
-  const cleanName = name.toLowerCase().replace(/\s/g, "-");
+    error = true;
+  }
 
-  const tableCode = `
+  if (!error) {
+    const cleanName = name.toLowerCase().replace(/\s/g, "-");
+    document.querySelector('[id="error"]').innerHTML = "";
+
+    const tableCode = `
         <tr class="${cleanName}">
             <th scope="row" class="assist-name">${name}</th>
             <td>
@@ -94,16 +102,17 @@ ADD_PLAYER.addEventListener("submit", (e) => {
         </tr>
     `;
 
-  TABLE.innerHTML += tableCode;
-  INFO.innerHTML = "";
+    TABLE.innerHTML += tableCode;
+    INFO.innerHTML = "";
 
-  const listenToAllPlayers = () => {
-    const allPlayers = document.querySelectorAll(".assist-name");
+    const listenToAllPlayers = () => {
+      const allPlayers = document.querySelectorAll(".assist-name");
 
-    Array.from(allPlayers).forEach((ele) => {
-      listenToPlayer(ele.innerHTML.toLowerCase().replace(/\s/g, "-"));
-    });
-  };
+      Array.from(allPlayers).forEach((ele) => {
+        listenToPlayer(ele.innerHTML.toLowerCase().replace(/\s/g, "-"));
+      });
+    };
 
-  listenToAllPlayers();
+    listenToAllPlayers();
+  }
 });

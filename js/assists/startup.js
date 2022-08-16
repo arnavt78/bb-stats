@@ -19,6 +19,16 @@ if (localStorage.getItem("teamName")) {
 const localTitleToast = new bootstrap.Toast(LOCAL_TITLE);
 localTitleToast.show();
 
+const listenToAllPlayers = () => {
+  const allPlayers = document.querySelectorAll(".assist-name");
+
+  Array.from(allPlayers).forEach((ele) => {
+    listenToPlayer(ele.innerHTML.toLowerCase().replace(/\s/g, "-"));
+  });
+};
+
+listenToAllPlayers();
+
 // function notifyMe() {
 //     // Let's check if the browser supports notifications
 //     if (!("Notification" in window)) {
