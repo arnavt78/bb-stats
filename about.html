@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-    <link rel="icon" href="./img/Basketball-Icon.png" />
+    <link rel="icon" href="./img/icon.png" />
     <title>About BB Stats</title>
   </head>
   <body class="m-2">
@@ -32,7 +32,7 @@
 
     <img
       class="mx-auto d-block"
-      src="./img/Basketball-Icon-and-Text.png"
+      src="./img/icon-and-txt.png"
       alt="Basketball Icon and Text"
       width="400"
       draggable="false"
@@ -41,38 +41,21 @@
     <hr class="mx-3" />
 
     <div class="ms-5">
-      <strong>Codename "Barebones"</strong>
+      <strong>BB Stats</strong>
 
       <br />
 
-      <span><code>v0.0.7</code></span>
+      <span><code>v0.1.0</code></span>
 
       <br />
 
-      <span>&#169; BB Stats, Inc. All rights reserved.</span>
-
-      <br /><br />
-
-      <small
-        >The BB Stats website and application code and UI (user interface) belong to BB Stats.
-        <strong>Do not</strong> <i>"steal"</i> this product (including getting the source code and
-        minimally changing it). Always get permission from the website developer/owner before using
-        the source code for any projects outside of BB Stats.</small
-      >
+      <small>This website was made by Arnav Thorat!</small>
     </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto mt-4">
-      <button class="btn btn-outline-secondary" id="closeWindow" type="button">
-        Okay, I agree
-      </button>
+    <div class="d-grid gap-2 col-6 mx-auto mt-5">
+      <button class="btn btn-outline-secondary" id="closeWindow" type="button">Okay</button>
     </div>
 
-    <script>
-      document.querySelectorAll("#closeWindow").forEach((e) => {
-        e.addEventListener("click", () => {
-          window.close();
-        });
-      });
-    </script>
+    <script src="./src/about/close.js"></script>
   </body>
 </html>
